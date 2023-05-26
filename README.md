@@ -2,7 +2,7 @@
 
 ## **`1- Picture about diamond`**
 
-![Images](Images/DiamondImage.jpg)
+<img src="Images/DiamondImage.jpg" alt="Diamond Image" width="100%">
 
 ## **`2- Some of EDA on data`**
 
@@ -10,11 +10,11 @@
 
 ![Images](Images/Cut.jpg)
 
-## **`3- Handling Skewness Of Data`**
+## **`3- After Handling A Skewness Of Some Numerical Attributes`**
 
 ![Images](Images/Skew.jpg)
 
-![Images](Images/After skew.jpg)
+![Images](Images/Afterskew.jpg)
 
 ## **`4- Model Evaluation`**
 
