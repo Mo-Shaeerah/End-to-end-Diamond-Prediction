@@ -12,22 +12,22 @@ import pickle
 import xgboost
 import catboost
 
-# Disable PyplotGlobalUseWarning
+# Step 1: Disable PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# Step 1: Set the title
+# Step 2: Set the title
 st.title("Diamond Price Prediction App")
 
-# Show diamond image
+# Step 3: Show diamond image
 image = Image.open("DiamondImage.jpg")
 st.image(image, caption="Diamond", use_column_width=True)
 
-# Step 2: Load and display a sample of data
+# Step 4: Load and display a sample of data
 data = pd.read_csv("Diamond-train.csv", index_col="Id")
 st.subheader("Sample Data")
 st.dataframe(data.sample(10))
 
-# Step 3: price Visualizations
+# Step 5: Visualizations
 fig, axes = plt.subplots(1, 4, figsize=(25, 10))
 
 fig = px.box(data.price, orientation="h", template="plotly_dark")
@@ -104,12 +104,12 @@ elif selected_attribute == "z":
     sns.kdeplot(x= data.z, fill=True, color='red', ax=axes[3])
 st.pyplot()
 
-# Add the "Done by Mohammed"
+# Step 6: Add "Done by Mohammed"
 st.markdown("Project Link: [project url](https://github.com/Mo-Sa-Shaeerah/End-to-end-Diamond-Prediction)")
 print()
 st.markdown("Done by: [Mohammed Salf Shaeerah](https://github.com/Mo-Sa-Shaeerah)")
 
-# Step 4: Characteristics of Diamond in Sidebar
+# Step 7: Characteristics of Diamond in Sidebar
 # Set sidebar title
 st.sidebar.title("Charact.. of Diamond 💎")
 
@@ -131,6 +131,7 @@ with col2:
     y = st.number_input('Diamond Width in mm:', min_value=0.5, max_value=100.0, value=1.0)
     z = st.number_input('Diamond Height in mm:', min_value=0.5, max_value=100.0, value=1.0)
 
+# Step 8: Build a Predict function
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
     # Encode object variables with numbers
     obj_cut = ['Ideal', 'Premium', 'Very Good', 'Good', 'Fair']
@@ -159,7 +160,7 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 
     return result
 
-# Step 5: Prediction Button
+# Step 9: Prediction Button
 if st.sidebar.button("Predict"):
     # Load the model
     with open("VotReg_model.pkl", "rb") as f:
