@@ -1,6 +1,6 @@
 ## **`End-to-end-Diamond-Prediction`**
 
-## **`1- Picture about diamond`**
+## **`1- A Picture about diamond`**
 
 <img src="Images/DiamondImage.jpg" alt="Diamond Image" width="100%">
 
@@ -23,6 +23,6 @@ This picture show the performance of Voting Regressor model after evaluated it o
 ![Images](Images/ModelEvaluate.jpg)
 
 ## **`5- Picture to Deployment step`**
-Here's a screnshot that show my streamlit app, and you can reach it by clicking on this link: http://192.168.1.7:8501
+Here's a screnshot that show my streamlit app, and you can reach it by clicking on this link:
 ![Images](Images/Streamlit-pic.jpg)
 
