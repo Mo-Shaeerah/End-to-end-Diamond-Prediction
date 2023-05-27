@@ -171,3 +171,4 @@ if st.sidebar.button("Predict"):
 
     # Display the predicted price
     st.sidebar.text(f"Predicted Price: {prediction} $")
+    
