@@ -19,11 +19,11 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Diamond Price Prediction App")
 
 # Step 3: Show diamond image
-image = Image.open("DiamondImage.jpg")
+image = Image.open("Images/DiamondImage.jpg")
 st.image(image, caption="Diamond", use_column_width=True)
 
 # Step 4: Load and display a sample of data
-data = pd.read_csv("Diamond-train.csv", index_col="Id")
+data = pd.read_csv("Data/Diamond-train.csv", index_col="Id")
 st.subheader("Sample Data")
 st.dataframe(data.sample(10))
 
@@ -163,8 +163,8 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 # Step 9: Prediction Button
 if st.sidebar.button("Predict"):
     # Load the model
-    with open("VotReg_model.pkl", "rb") as f:
-        model = pickle.load(f)
+    with open("VotReg_model.pkl", "rb") as VotReg:
+        model = pickle.load(VotReg)
     
     # Perform the prediction
     prediction = predict(carat, cut, color, clarity, depth, table, x, y, z)
