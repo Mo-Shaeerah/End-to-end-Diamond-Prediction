@@ -173,3 +173,4 @@ if st.sidebar.button("Predict"):
 
     # Display the predicted price
     st.sidebar.success(f'The Predicted Price Of 💎 is {prediction} USD')
+    
