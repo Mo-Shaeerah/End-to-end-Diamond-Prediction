@@ -131,14 +131,14 @@ with col2:
     y = st.number_input('Diamond Width in mm:', min_value=0.5, max_value=100.0, value=1.0)
     z = st.number_input('Diamond Height in mm:', min_value=0.5, max_value=100.0, value=1.0)
 
-# Loading up the model
+# Stpe 8: Loading up the model
 model = xgboost.XGBRegressor()
 model.load_model('Model/xgboost_model.json')
 
 #Caching the model for faster loading
 @st.cache_resource
 
-# Step 8: Build a Predict function
+# Step 9: Build a Predict function
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
     # Encode object variables with numbers
     obj_cut = ['Ideal', 'Premium', 'Very Good', 'Good', 'Fair']
@@ -166,7 +166,7 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 
     return result
 
-# Step 9: Prediction Button
+# Step 10: Prediction Button
 if st.sidebar.button("Predict"):
     # Perform the prediction
     prediction = predict(carat, cut, color, clarity, depth, table, x, y, z)
