@@ -16,7 +16,7 @@ import catboost
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Step 2: Set the title
-st.title("Diamond Price Prediction App")
+st.title("Diamond Price Prediction App 💎")
 
 # Step 3: Show diamond image
 image = Image.open("Images/DiamondImage.jpg")
@@ -131,6 +131,17 @@ with col2:
     y = st.number_input('Diamond Width in mm:', min_value=0.5, max_value=100.0, value=1.0)
     z = st.number_input('Diamond Height in mm:', min_value=0.5, max_value=100.0, value=1.0)
 
+
+import zipfile
+# Extract the zip file
+with zipfile.ZipFile("Model/VotReg_model.zip", "r") as zip_ref:
+    zip_ref.extractall("extracted_model")
+
+# Load the serialized model
+model_path = "extracted_model/VotReg_model.pkl"
+with open(model_path, "rb") as file:
+    model = pickle.load(file)
+
 # Step 8: Build a Predict function
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
     # Encode object variables with numbers
@@ -155,19 +166,16 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 
     # making predictions using the trained model
     prediction = model.predict(df)
-    result = int(prediction)
-    #result = prediction
+    #result = int(prediction)
+    result = prediction
 
     return result
 
 # Step 9: Prediction Button
 if st.sidebar.button("Predict"):
-    # Load the model
-    with open("VotReg_model.pkl", "rb") as VotReg:
-        model = pickle.load(VotReg)
-    
     # Perform the prediction
     prediction = predict(carat, cut, color, clarity, depth, table, x, y, z)
 
     # Display the predicted price
-    st.sidebar.text(f"Predicted Price: {prediction} $")
+    st.sidebar.success(f'The Predicted Price Of 💎 is ${prediction[0]:.2f} USD')
+
