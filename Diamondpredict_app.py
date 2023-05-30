@@ -136,7 +136,7 @@ model = xgboost.XGBRegressor()
 model.load_model('Model/xgboost_model.json')
 
 #Caching the model for faster loading
-st.cache_resource
+@st.cache_resource
 
 # Step 8: Build a Predict function
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
