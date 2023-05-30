@@ -24,4 +24,13 @@ This picture show the performance of Voting Regressor model after evaluated it o
 
 ## **`5- Picture To Deployment Step`**
 Here's a screnshot that show my streamlit app, and you can reach it by clicking on this link:
-![Images](Images/Streamlit-pic.jpg)
+
+1. 
+![Images](Images/Streamlit-pic1.jpg)
+
+2. 
+![Images](Images/Streamlit-pic2.jpg)
+
+3.
+![Images](Images/Streamlit-pic3.jpg)
+
