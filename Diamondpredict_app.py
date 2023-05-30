@@ -131,16 +131,12 @@ with col2:
     y = st.number_input('Diamond Width in mm:', min_value=0.5, max_value=100.0, value=1.0)
     z = st.number_input('Diamond Height in mm:', min_value=0.5, max_value=100.0, value=1.0)
 
+# Loading up the model
+model = xgboost.XGBRegressor()
+model.load_model('Model/xgboost_model.json')
 
-import zipfile
-# Extract the zip file
-with zipfile.ZipFile("Model/VotReg_model.zip", "r") as zip_ref:
-    zip_ref.extractall("extracted_model")
-
-# Load the serialized model
-model_path = "extracted_model/VotReg_model.pkl"
-with open(model_path, "rb") as file:
-    model = pickle.load(file)
+#Caching the model for faster loading
+st.cache_resource
 
 # Step 8: Build a Predict function
 def predict(carat, cut, color, clarity, depth, table, x, y, z):
@@ -166,8 +162,7 @@ def predict(carat, cut, color, clarity, depth, table, x, y, z):
 
     # making predictions using the trained model
     prediction = model.predict(df)
-    #result = int(prediction)
-    result = prediction
+    result = int(prediction)
 
     return result
 
@@ -177,5 +172,4 @@ if st.sidebar.button("Predict"):
     prediction = predict(carat, cut, color, clarity, depth, table, x, y, z)
 
     # Display the predicted price
-    st.sidebar.success(f'The Predicted Price Of 💎 is ${prediction[0]:.2f} USD')
-
+    st.sidebar.success(f'The Predicted Price Of 💎 is {prediction} USD')
