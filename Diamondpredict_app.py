@@ -28,7 +28,7 @@ st.subheader("Sample Data")
 st.dataframe(data.sample(10))
 
 # Step 5: Visualizations
-fig, axes = plt.subplots(1, 4, figsize=(25, 10))
+fig, axes = plt.subplots(1, 4, figsize=(15, 7))
 
 fig = px.box(data.price, orientation="h", template="plotly_dark")
 st.plotly_chart(fig)
@@ -43,7 +43,7 @@ st.pyplot()
 
 selected_attribute = st.selectbox("Select Attribute to Visualize", ["carat", "cut", "color", "clarity", "depth", "table", "x", "y", "z"])
 
-fig, axes = plt.subplots(1, 4, figsize=(25, 10))
+fig, axes = plt.subplots(1, 4, figsize=(15, 7))
 
 if selected_attribute == "carat":
     # Visualizations for carat attribute
@@ -135,7 +135,7 @@ with col2:
 model = xgboost.XGBRegressor()
 model.load_model('Model/xgboost_model.json')
 
-#Caching the model for faster loading
+# Caching the model for faster loading
 @st.cache_resource
 
 # Step 9: Build a Predict function
