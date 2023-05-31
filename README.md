@@ -25,7 +25,9 @@ This picture show the performance of Voting Regressor model after evaluated it o
 ![Images](Images/ModelEvaluate.jpg)
 
 ## **`5- Picture To Deployment Step`**
-Here's a screnshot that show my streamlit app, and you can reach it by clicking on this link:
+Here's a screnshot that show my streamlit app, and you can reach it by clicking on Open in streamlit:
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mo-sa-shaeerah-end-to-end-diamond-pre-diamondpredict-app-n6o81k.streamlit.app/)
 
 1. 
 ![Images](Images/Streamlit-pic1.jpg)
