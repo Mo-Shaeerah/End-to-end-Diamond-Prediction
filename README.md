@@ -41,5 +41,6 @@ Here's a screnshot that show my streamlit app, and you can reach it by clicking 
 ## **`6- A Video About How To Use The App`**
 
 You Can See My Video About How To Use The Streamlit App By Clicking On 👇
+
 [![LinkedIn Video]](https://www.linkedin.com/posts/mohammed-salf-shaeerah-650418258_machinelearning-algorithms-project-activity-7069680572125655040-Z6kX?utm_source=share&utm_medium=member_desktop)
 
