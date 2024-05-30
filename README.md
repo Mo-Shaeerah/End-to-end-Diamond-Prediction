@@ -2,7 +2,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_red.svg)](https://mo-sa-shaeerah-end-to-end-diamond-pre-diamondpredict-app-n6o81k.streamlit.app/)
 
-## **`1- A Picture about diamond`**
+## **`1- An Image about diamond`**
 
 <img src="Images/DiamondImage.jpg" alt="Diamond Image" width="100%">
 
